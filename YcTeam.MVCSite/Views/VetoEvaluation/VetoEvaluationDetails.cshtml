@@ -1,0 +1,44 @@
+﻿@model YcTeam.DTO.Master.VetoEvaluationDto
+
+<div>
+    <h4>VetoEvaluationDto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Project)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VetoCondition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VetoCondition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VetoContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VetoContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("修改", "VetoEvaluationEdit", new { id = Model.Id }) |
+    @Html.ActionLink("返回", "VetoEvaluationList")
+</p>

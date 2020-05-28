@@ -1,0 +1,64 @@
+﻿@model IEnumerable<YcTeam.DTO.Master.VetoEvaluationDto>
+
+<p>
+    @Html.ActionLink("添加否决内容", "CreateVetoEvaluation")
+</p>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Project)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VetoCondition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VetoContent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateTime)
+            </th>
+            <th>操作</th>
+            <th>操作</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VetoCondition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VetoContent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateTime)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "VetoEvaluationEdit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "VetoEvaluationDetails", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "VetoEvaluationDelete", new { id = item.Id })*@
+                <a class="btn btn-success btn-xs" href="@Url.Action("VetoEvaluationDetails", new {id = item.Id})">详情</a>
+            </td>
+            <td>
+                <a class="glyphicon glyphicon-pencil" href="@Url.Action("VetoEvaluationEdit", new {id = item.Id})"></a>
+            </td>
+            <td>
+                <a class="glyphicon glyphicon-remove" href="@Url.Action("VetoEvaluationDelete", new {id = item.Id})" onclick="return confirm('确定要删除?');"></a>
+            </td>
+        </tr>
+    }
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="10">
+            @Html.Partial("~\\Views\\PageList\\_PageList.cshtml")
+        </td>
+    </tr>
+    </tfoot>
+</table>

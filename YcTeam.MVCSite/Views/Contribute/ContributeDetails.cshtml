@@ -1,0 +1,68 @@
+﻿@model YcTeam.DTO.Master.ContributeDto
+
+<div>
+    <h4>ContributeDto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AddPointProject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddPointProject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddPointContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddPointContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddPointMethod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddPointMethod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SelfPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SelfPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SelfReason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SelfReason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuditPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuditPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<YcTeam.DTO.Master.StandardCategoryDto>
+
+<p>
+    @Html.ActionLink("创建标准类别", "CreateStandardCategory")
+</p>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateTime)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateTime)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                    <a class="btn btn-success btn-xs" href="@Url.Action("StandardCategoryDetails", new {id = item.Id})">详情</a>
+                </td>
+                <td>
+                    <a class="glyphicon glyphicon-pencil" href="@Url.Action("StandardCategoryEdit", new {id = item.Id})"></a>
+                </td>
+                <td>
+                    <a class="glyphicon glyphicon-remove" href="@Url.Action("StandardCategoryDelete", new {id = item.Id})" onclick="return confirm('确定要删除?');"></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="10">
+                @Html.Partial("~\\Views\\PageList\\_PageList.cshtml")
+            </td>
+        </tr>
+    </tfoot>
+
+</table>
